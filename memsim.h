@@ -11,10 +11,10 @@ typedef struct
 // modes of page replacement
 enum repl 
 {
-    rand,
-    fifo,
-    lru,
-    clock
+    RAND,
+    FIFO,
+    LRU,
+    CLOCK
 };
 
 const int pageoffset = 12;
@@ -29,7 +29,7 @@ int allocateFrame(int page_number);
 // policy selectors
 page selectVictimFIFO(int page_number);
 page selectVictimLRU(int page_number);
-page selectVictimRand(int page_number);
-page selectVictimClock(int page_number);
+page selectVictimRAND(int page_number);
+page selectVictimCLOCK(int page_number);
 
 #endif

@@ -41,17 +41,17 @@ int main(int argc, char* argv[])
             printf( "Frame number must be at least 1\n");
             exit ( -1);
         }
-        if (strcmp(argv[3], "lru\0") == 0)
-            replace = lru;
-	    else if (strcmp(argv[3], "rand\0") == 0)
-	        replace = rand;
-	    else if (strcmp(argv[3], "clock\0") == 0)
-            replace = clock;		 
-	    else if (strcmp(argv[3], "fifo\0") == 0)
-            replace = fifo;		 
+        if (strcmp(argv[3], "LRU\0") == 0)
+            replace = LRU;
+	    else if (strcmp(argv[3], "RAND\0") == 0)
+	        replace = RAND;
+	    else if (strcmp(argv[3], "CLOCK\0") == 0)
+            replace = CLOCK;		 
+	    else if (strcmp(argv[3], "FIFO\0") == 0)
+            replace = FIFO;		 
         else 
 	    {
-            printf( "Replacement algorithm must be rand/fifo/lru/clock  \n");
+            printf( "Replacement algorithm must be RAND/FIFO/LRU/CLOCK  \n");
             exit ( -1);
 	    }
 
@@ -100,17 +100,17 @@ int main(int argc, char* argv[])
             {
                 switch (replace) 
                 {
-                    case fifo:
+                    case FIFO:
                         Pvictim = selectVictimFIFO(page_number);
                         break;
-                    case lru:
+                    case LRU:
                         Pvictim = selectVictimLRU(page_number);
                         break;
-                    case rand:
-                        Pvictim = selectVictimRand(page_number);
+                    case RAND:
+                        Pvictim = selectVictimRAND(page_number);
                         break;
-                    case clock:
-                        Pvictim = selectVictimClock(page_number);
+                    case CLOCK:
+                        Pvictim = selectVictimCLOCK(page_number);
                         break; 
 		        }
 
