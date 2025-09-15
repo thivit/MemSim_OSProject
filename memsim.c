@@ -20,7 +20,6 @@ int main(int argc, char* argv[])
     page Pvictim;
     FILE* trace;
 
-
     // check arguments
     if (argc < 5) 
     {
@@ -67,7 +66,6 @@ int main(int argc, char* argv[])
 	    }
 	}
 	
-
     // initialise MMU
 	done = createMMU (numFrames);
 	if ( done == -1 ) 
@@ -79,7 +77,6 @@ int main(int argc, char* argv[])
 	no_events = 0 ;
 	disk_writes = 0 ;
 	disk_reads = 0 ;
-
 
     // process trace file
     do_line = fscanf(trace,"%x %c",&address,&rw);
