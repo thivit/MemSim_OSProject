@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
         if (strcmp(argv[3], "lru\0") == 0)
             replace = lru;
 	    else if (strcmp(argv[3], "rand\0") == 0)
-	        replace = random;
+	        replace = rand;
 	    else if (strcmp(argv[3], "clock\0") == 0)
             replace = clock;		 
 	    else if (strcmp(argv[3], "fifo\0") == 0)
@@ -106,7 +106,7 @@ int main(int argc, char* argv[])
                     case lru:
                         Pvictim = selectVictimLRU(page_number);
                         break;
-                    case random:
+                    case rand:
                         Pvictim = selectVictimRand(page_number);
                         break;
                     case clock:

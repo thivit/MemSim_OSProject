@@ -11,7 +11,7 @@ typedef struct
 // modes of page replacement
 enum repl 
 {
-    random,
+    rand,
     fifo,
     lru,
     clock
