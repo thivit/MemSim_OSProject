@@ -1,0 +1,49 @@
+#include <stdlib.h>
+#include "memsim.h"
+
+page* frameTable;
+
+int createMMU(int frames)
+{
+    frameTable = malloc(frames * sizeof(page));
+
+    // check if malloc fails
+    if(!frameTable) return -1;
+
+    // initialise frames
+    for(int i = 0; i < frames; i++)
+    {
+        frameTable[i].pageNo = -1;
+        frameTable[i].modified = 0;
+    }
+
+    return 0;
+}
+
+int checkInMemory(int page_number)
+{
+    for(int i = 0; i < numFrames; i++)
+    {
+        if(frameTable[i].pageNo == page_number) return i;
+    }
+
+    // if page not found
+    return -1;
+}
+
+int allocateFrame(int page_number)
+{
+    for(int i = 0; i < numFrames; i++)
+    {
+        // find freee slot
+        if(frameTable[i].pageNo == -1)
+        {
+            frameTable[i].pageNo = page_number;
+            frameTable[i].modified = 0;
+            return i;
+        }
+    }
+
+    // no free slot
+    return -1;
+}   
