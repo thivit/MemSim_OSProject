@@ -135,7 +135,8 @@ int main(int argc, char* argv[])
 		}
 		else if ( rw == 'W')
         {
-		    // mark page in page table as written - modified  
+            int f = checkInMemory(page_number);
+            if (f != -1) frameTable[f].modified = 1;
 		    if (debugmode) printf( "writting   %8d \n", page_number) ;
 		}
 		else 
