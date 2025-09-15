@@ -18,9 +18,8 @@ enum repl
 };
 
 const int pageoffset = 12;
-// shared variables declared in mem.c
-extern int numFrames;
-extern page* frameTable;
+extern int numFrames;           // number of frames (defined in memsim.c)
+extern page* frameTable;        // frame table      (defined in mmu.c)
 
 // main functions
 int createMMU(int frames);
