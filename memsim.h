@@ -17,6 +17,7 @@ enum repl
     clock
 };
 
+const int pageoffset = 12;
 // shared variables declared in mem.c
 extern int numFrames;
 extern page* frameTable;
