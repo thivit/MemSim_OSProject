@@ -2,6 +2,10 @@
 #include "memsim.h"
 
 page* frameTable;
+const int pageoffset = 12;
+
+unsigned long long tick = 0;
+
 
 int createMMU(int frames)
 {
