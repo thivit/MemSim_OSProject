@@ -17,7 +17,7 @@ enum repl
     CLOCK
 };
 
-const int pageoffset = 12;
+extern const int pageoffset;
 extern int numFrames;           // number of frames (defined in memsim.c)
 extern page* frameTable;        // frame table      (defined in mmu.c)
 
