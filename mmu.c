@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include "memsim.h"
 
-page* frameTable;
 const int pageoffset = 12;
 
 unsigned long long tick = 0;
