@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
 	        replace = RAND;
 	    else if (strcmp(argv[3], "clock\0") == 0)
             replace = CLOCK;		 
-	    else if (strcmp(argv[3], "fif\0") == 0)
+	    else if (strcmp(argv[3], "fif0\0") == 0)
             replace = FIFO;		 
         else 
 	    {
