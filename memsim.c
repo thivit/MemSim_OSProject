@@ -41,13 +41,13 @@ int main(int argc, char* argv[])
             printf( "Frame number must be at least 1\n");
             exit ( -1);
         }
-        if (strcmp(argv[3], "LRU\0") == 0)
+        if (strcmp(argv[3], "lru\0") == 0)
             replace = LRU;
-	    else if (strcmp(argv[3], "RAND\0") == 0)
+	    else if (strcmp(argv[3], "rand\0") == 0)
 	        replace = RAND;
-	    else if (strcmp(argv[3], "CLOCK\0") == 0)
+	    else if (strcmp(argv[3], "clock\0") == 0)
             replace = CLOCK;		 
-	    else if (strcmp(argv[3], "FIFO\0") == 0)
+	    else if (strcmp(argv[3], "fifo\0") == 0)
             replace = FIFO;		 
         else 
 	    {
