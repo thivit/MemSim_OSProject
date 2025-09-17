@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
             replace = FIFO;		 
         else 
 	    {
-            printf( "Replacement algorithm must be RAND/FIFO/LRU/CLOCK  \n");
+            printf( "Replacement algorithm must be rand/fifo/lru/clock  \n");
             exit ( -1);
 	    }
 
