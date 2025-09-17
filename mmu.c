@@ -27,7 +27,11 @@ int checkInMemory(int page_number)
 {
     for(int i = 0; i < numFrames; i++)
     {
-        if(frameTable[i].pageNo == page_number) return i;
+        if(frameTable[i].pageNo == page_number) 
+        {
+            set_reference_bit(i);
+            return i;
+        }
     }
 
     // if page not found

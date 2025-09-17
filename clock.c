@@ -4,6 +4,12 @@
 static int* referenceBits = NULL;
 static int clockHand = 0;
 
+void set_reference_bit(int frame_no)
+{
+    if(referenceBits != NULL)
+        referenceBits[frame_no] = 1;
+}
+
 page selectVictimCLOCK(int page_number)
 {
     page victim;
