@@ -25,8 +25,7 @@ page selectVictimCLOCK(int page_number)
             victim = frameTable[clockHand];
 
             // replace with new page
-            frameTable[clockHand].pageNo = page_number;
-            frameTable[clockHand].modified = 0;
+            load_into_frame(clockHand, page_number);
 
             // mark new page as recently used
             referenceBits[clockHand] = 1;

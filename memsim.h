@@ -26,6 +26,7 @@ extern page* frameTable;        // frame table      (defined in mmu.c)
 int createMMU(int frames);
 int checkInMemory(int page_number);
 int allocateFrame(int page_number);
+void load_into_frame(int frame_no, int page_number);
 
 // policy selectors
 page selectVictimFIFO(int page_number);

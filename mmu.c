@@ -50,3 +50,9 @@ int allocateFrame(int page_number)
     // no free slot
     return -1;
 }   
+
+void load_into_frame(int frame_no, int page_number)
+{
+    frameTable[frame_no].pageNo = page_number;
+    frameTable[frame_no].modified = 0;
+}
