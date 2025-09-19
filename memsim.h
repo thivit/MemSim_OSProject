@@ -27,7 +27,11 @@ int createMMU(int frames);
 int checkInMemory(int page_number);
 int allocateFrame(int page_number);
 void load_into_frame(int frame_no, int page_number);
-void set_reference_bit(int frame_no);
+
+// function pointer for LRU vs Clock
+extern void (*set_reference_bit)(int frame_no);
+void set_reference_bit_lru(int frame_no);
+void set_reference_bit_clock(int frame_no);
 
 // policy selectors
 page selectVictimFIFO(int page_number);

@@ -4,7 +4,7 @@
 static int* referenceBits = NULL;
 static int clockHand = 0;
 
-void set_reference_bit(int frame_no)
+void set_reference_bit_clock(int frame_no)
 {
     if(referenceBits != NULL)
         referenceBits[frame_no] = 1;

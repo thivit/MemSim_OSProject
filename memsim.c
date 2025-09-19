@@ -5,6 +5,7 @@
 
 int numFrames;
 page* frameTable;
+void (*set_reference_bit)(int frame_no);
 
 int main(int argc, char* argv[])
 {
@@ -64,6 +65,16 @@ int main(int argc, char* argv[])
             printf( "Replacement algorithm must be quiet/debug  \n");
             exit ( -1);
 	    }
+
+        // Set the reference bit function based on which algorithm is selected
+        if (replace == LRU)
+        {
+            set_reference_bit = set_reference_bit_lru;
+        }
+        else if (replace == CLOCK)
+        {
+            set_reference_bit = set_reference_bit_clock;
+        }
 	}
 	
     // initialise MMU

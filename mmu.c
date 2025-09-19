@@ -47,6 +47,8 @@ int allocateFrame(int page_number)
         {
             frameTable[i].pageNo = page_number;
             frameTable[i].modified = 0;
+            if (set_reference_bit != NULL)
+                set_reference_bit(i);
             return i;
         }
     }
