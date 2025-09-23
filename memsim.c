@@ -5,7 +5,7 @@
 
 int numFrames;
 page* frameTable;
-void (*set_reference_bit)(int frame_no);
+void (*set_reference_bit)(int frame_no) = NULL;
 
 int main(int argc, char* argv[])
 {
