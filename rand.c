@@ -1,5 +1,6 @@
 #include "memsim.h"
 #include <stdio.h>
+#include <stdlib.h>  
 
 page selectVictimRAND(int page_number)
 {
