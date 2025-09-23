@@ -29,7 +29,8 @@ int checkInMemory(int page_number)
     {
         if(frameTable[i].pageNo == page_number) 
         {
-            set_reference_bit(i);
+            if (set_reference_bit != NULL) 
+                set_reference_bit(i);
             return i;
         }
     }
